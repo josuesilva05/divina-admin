@@ -4,7 +4,6 @@ import { Sidebar } from "./components/sidebar"
 import { Header } from "./components/header"
 import { Dashboard } from "./components/dashboard"
 import { CaixaModule } from "./components/caixa"
-import { ClientesModule } from "./components/clientes"
 
 function App() {
   const [activeTab, setActiveTab] = useState("dashboard")
@@ -21,7 +20,7 @@ function App() {
       financeiro: "Financeiro",
       configuracoes: "Configurações"
     }
-    return titles[tab] || "Bella Gestão"
+    return titles[tab] || "Divina Glow"
   }
 
   const renderContent = () => {
@@ -30,36 +29,10 @@ function App() {
         return <Dashboard />
       case "caixa":
         return <CaixaModule />
-      case "clientes":
-        return <ClientesModule />
-      case "agenda":
-        return (
-          <div className="flex items-center justify-center h-64">
-            <p className="text-muted-foreground">Módulo de Agenda em desenvolvimento...</p>
-          </div>
-        )
-      case "servicos":
-        return (
-          <div className="flex items-center justify-center h-64">
-            <p className="text-muted-foreground">Módulo de Serviços em desenvolvimento...</p>
-          </div>
-        )
       case "relatorios":
         return (
           <div className="flex items-center justify-center h-64">
             <p className="text-muted-foreground">Módulo de Relatórios em desenvolvimento...</p>
-          </div>
-        )
-      case "produtos":
-        return (
-          <div className="flex items-center justify-center h-64">
-            <p className="text-muted-foreground">Módulo de Produtos em desenvolvimento...</p>
-          </div>
-        )
-      case "financeiro":
-        return (
-          <div className="flex items-center justify-center h-64">
-            <p className="text-muted-foreground">Módulo Financeiro em desenvolvimento...</p>
           </div>
         )
       case "configuracoes":
@@ -85,7 +58,7 @@ function App() {
           {/* Main Content */}
           <div className="flex-1 flex flex-col">
             <Header title={getTabTitle(activeTab)} />
-            <main className="flex-1 p-6">
+            <main className="">
               {renderContent()}
             </main>
           </div>

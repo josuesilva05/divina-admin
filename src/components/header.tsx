@@ -18,24 +18,13 @@ interface HeaderProps {
 export function Header({ title }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
+      <div className="mx-5 flex h-14 items-center">
         <div className="flex flex-1 items-center justify-between space-x-4">
           <div>
             <h1 className="text-xl font-semibold">{title}</h1>
           </div>
           
           <div className="flex items-center space-x-4">
-            <div className="relative w-64">
-              <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input
-                placeholder="Buscar clientes, serviços..."
-                className="pl-8"
-              />
-            </div>
-            
-            <Button variant="ghost" size="icon">
-              <Bell className="h-4 w-4" />
-            </Button>
             
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

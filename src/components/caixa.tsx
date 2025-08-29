@@ -137,20 +137,6 @@ export function CaixaModule() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">
-              Saldo do Dia
-            </CardTitle>
-            <DollarSign className="h-4 w-4 text-blue-600" />
-          </CardHeader>
-          <CardContent>
-            <div className={`text-2xl font-bold ${resumo.saldo >= 0 ? 'text-blue-600' : 'text-red-600'}`}>
-              {formatCurrency(resumo.saldo)}
-            </div>
-          </CardContent>
-        </Card>
       </div>
 
       {/* Registro de Movimentações */}
@@ -258,7 +244,6 @@ export function CaixaModule() {
                 <TableHead>Data/Hora</TableHead>
                 <TableHead>Tipo</TableHead>
                 <TableHead>Categoria</TableHead>
-                <TableHead>Descrição</TableHead>
                 <TableHead>Pagamento</TableHead>
                 <TableHead className="text-right">Valor</TableHead>
               </TableRow>
@@ -270,7 +255,7 @@ export function CaixaModule() {
                     {formatDate(registro.data)}
                   </TableCell>
                   <TableCell>
-                    <Badge variant={registro.tipo === 'Entrada' ? 'default' : 'destructive'}>
+                    <Badge variant={registro.tipo === 'Entrada' ? 'primary' : 'destructive'}>
                       {registro.tipo === 'Entrada' ? (
                         <TrendingUp className="mr-1 h-3 w-3" />
                       ) : (
@@ -283,9 +268,6 @@ export function CaixaModule() {
                     <Badge variant="outline">
                       {registro.categoria}
                     </Badge>
-                  </TableCell>
-                  <TableCell className="max-w-[200px] truncate">
-                    {registro.descricao}
                   </TableCell>
                   <TableCell>
                     <Badge variant="secondary">

@@ -26,21 +26,6 @@ const menuItems = [
     id: "dashboard"
   },
   {
-    title: "Agenda",
-    icon: Calendar,
-    id: "agenda"
-  },
-  {
-    title: "Clientes",
-    icon: Users,
-    id: "clientes"
-  },
-  {
-    title: "Serviços",
-    icon: Scissors,
-    id: "servicos"
-  },
-  {
     title: "Caixa",
     icon: CreditCard,
     id: "caixa"
@@ -49,16 +34,6 @@ const menuItems = [
     title: "Relatórios",
     icon: BarChart3,
     id: "relatorios"
-  },
-  {
-    title: "Produtos",
-    icon: Package,
-    id: "produtos"
-  },
-  {
-    title: "Financeiro",
-    icon: TrendingUp,
-    id: "financeiro"
   }
 ]
 
@@ -70,14 +45,14 @@ export function Sidebar({ className, activeTab, onTabChange }: SidebarProps) {
           <div className="flex items-center mb-6">
             <Scissors className="h-6 w-6 mr-2 text-primary" />
             <h2 className="text-lg font-semibold tracking-tight">
-              Bella Gestão
+              Divina Glow
             </h2>
           </div>
           <div className="space-y-1">
             <h3 className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
               Principal
             </h3>
-            {menuItems.slice(0, 4).map((item) => (
+            {menuItems.slice(0, 1).map((item) => (
               <Button
                 key={item.id}
                 variant={activeTab === item.id ? "secondary" : "ghost"}
@@ -96,7 +71,7 @@ export function Sidebar({ className, activeTab, onTabChange }: SidebarProps) {
             <h3 className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
               Gestão
             </h3>
-            {menuItems.slice(4).map((item) => (
+            {menuItems.slice(1, 4).map((item) => (
               <Button
                 key={item.id}
                 variant={activeTab === item.id ? "secondary" : "ghost"}

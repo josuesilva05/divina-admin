@@ -1,41 +1,14 @@
-export interface Cliente {
-  id: string;
-  nome: string;
-  telefone: string;
-  email?: string;
-  ultimaVisita?: Date;
-  totalGasto: number;
-}
-
 export interface Servico {
   id: string;
   nome: string;
   preco: number;
-  duracao: number; // em minutos
   categoria: 'Cabelo' | 'Unha' | 'Estética' | 'Depilação' | 'Outros';
-}
-
-export interface Profissional {
-  id: string;
-  nome: string;
-  especialidades: string[];
-  comissao: number; // porcentagem
-}
-
-export interface Agendamento {
-  id: string;
-  clienteId: string;
-  profissionalId: string;
-  servicoId: string;
-  dataHora: Date;
-  status: 'Agendado' | 'Em Andamento' | 'Concluído' | 'Cancelado';
-  observacoes?: string;
 }
 
 export interface RegistroCaixa {
   id: string;
   tipo: 'Entrada' | 'Saída';
-  categoria: 'Serviço' | 'Produto' | 'Despesa' | 'Comissão';
+  categoria: 'Pé e mão (simples)' | 'Pé e mão (design)' | 'Esmaltação em gel' | 'Unha postiça' | 'Unha postiça + pé' | 'Spa dos pés' | 'Escova' | 'Coloração' | 'Progressiva' | 'Corte' | 'Corte (finalização)' | 'Corte (sem finalização)' | 'Hidratação' | 'Reconstução' | 'Nutrição' | 'Buço' | 'Cílios look francês';
   valor: number;
   descricao: string;
   data: Date;
@@ -50,11 +23,6 @@ export interface DashboardMetrics {
   servicosMaisVendidos: Array<{
     servico: string;
     quantidade: number;
-    receita: number;
-  }>;
-  profissionaisMaisAtivos: Array<{
-    profissional: string;
-    atendimentos: number;
     receita: number;
   }>;
 }
