@@ -1,48 +1,20 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { sub } from 'date-fns';
-import { ArrowUpRight, TrendingDown, UserPlus } from 'lucide-react';
 
-const cards = [
-  {
-    title: 'Receita diária',
-    subtitle: 'Hoje',
-    value: 'R$ 956,00',
-    valueColor: 'text-green-600',
-    badge: {
-      color: 'bg-green-100 text-green-600 dark:bg-green-950 dark:text-green-400',
-      icon: ArrowUpRight,
-      iconColor: 'text-green-500',
-      text: '+5.4%',
-    },
-  },
-  {
-    title: 'Receita Mensal',
-    subtitle: 'Este mês',
-    value: 'R$ 5.840,00',
-    valueColor: 'text-blue-600',
-    badge: {
-      color: 'bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-400',
-      icon: UserPlus,
-      iconColor: 'text-blue-500',
-      text: '+3.2%',
-    },
-  },
-  {
-    title: 'Clientes',
-    subtitle: 'Atendimentos hoje',
-    value: '10',
-    valueColor: 'text-red-500',
-    badge: {
-      color: 'bg-red-100 text-red-600 dark:bg-red-950 dark:text-red-400',
-      icon: TrendingDown,
-      iconColor: 'text-red-500',
-      text: '-1.1%',
-    },
-  },
-];
+export type CardType = {
+  title: string;
+  subtitle: string;
+  value: string;
+  valueColor: string;
+  badge: {
+    color: string;
+    icon: React.ComponentType<{ className?: string }>;
+    iconColor: string;
+    text: string;
+  };
+};
 
-export default function StatisticCard7() {
+export default function DashboardCards({ cards }: { cards: CardType[] }) {
   return (
       <div className="@container w-full">
         <div className="grid grid-cols-1 @lg:grid-cols-3 bg-background overflow-hidden rounded-xl border border-border">

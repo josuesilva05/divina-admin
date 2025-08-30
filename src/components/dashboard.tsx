@@ -22,14 +22,56 @@ import {
   Clock,
   Award,
   CircleDollarSign,
-  UserPlus
+  UserPlus,
+  ArrowUpRight,
+  TrendingDown
 } from "lucide-react"
 import { mockDashboardMetrics, mockReceitaSemanal } from "@/data/mockData"
 import StatisticCard7 from "./ui/reui/statistic-card-7"
 import LineChart2 from "./ui/reui/line-chart-2"
+import ServicosMaisProcuradosTable from "./table"
 
 export function Dashboard() {
   const metrics = mockDashboardMetrics
+
+  const cards = [
+    {
+      title: 'Receita diária',
+      subtitle: 'Hoje',
+      value: 'R$ 956,00',
+      valueColor: 'text-green-600',
+      badge: {
+        color: 'bg-green-100 text-green-600 dark:bg-green-950 dark:text-green-400',
+        icon: ArrowUpRight,
+        iconColor: 'text-green-500',
+        text: '+5.4%',
+      },
+    },
+    {
+      title: 'Receita Mensal',
+      subtitle: 'Este mês',
+      value: 'R$ 5.840,00',
+      valueColor: 'text-blue-600',
+      badge: {
+        color: 'bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-400',
+        icon: UserPlus,
+        iconColor: 'text-blue-500',
+        text: '+3.2%',
+      },
+    },
+    {
+      title: 'Clientes',
+      subtitle: 'Atendimentos hoje',
+      value: '10',
+      valueColor: 'text-red-500',
+      badge: {
+        color: 'bg-red-100 text-red-600 dark:bg-red-950 dark:text-red-400',
+        icon: TrendingDown,
+        iconColor: 'text-red-500',
+        text: '-1.1%',
+      },
+    },
+  ];
 
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -39,9 +81,9 @@ export function Dashboard() {
   }
 
   return (
-    <div className="h-screen overflow-y-auto space-y-6 p-7">
+    <div className="space-y-6">
       <div className="w-full">
-        <StatisticCard7 />
+        <StatisticCard7 cards={cards} />
       </div>
       <div className="flex space-x-6">
         <LineChart2 />
@@ -56,22 +98,7 @@ export function Dashboard() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                {metrics.servicosMaisVendidos.map((item, index) => (
-                  <div key={index} className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <Badge variant="secondary">{index + 1}º</Badge>
-                      <span className="font-medium">{item.servico}</span>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-medium">{formatCurrency(item.receita)}</div>
-                      <div className="text-xs text-muted-foreground">
-                        {item.quantidade} vendas
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <ServicosMaisProcuradosTable />
             </CardContent>
           </Card>
         </div>
