@@ -1,0 +1,1 @@
+export { CaixaModule } from './caixa'
