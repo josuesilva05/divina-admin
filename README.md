@@ -2,7 +2,7 @@
 
 Sistema de gestão completo desenvolvido com Electron. Tudo que você precisa para gerenciar sua clínica ou salão de beleza.
 
-![Demo GIF](https://github.com/LuanRoger/electron-shadcn/blob/main/images/foto.png)
+![Demo GIF](https://github.com/josuesilva05/divina-admin/blob/main/images/foto.png)
 
 ## Sobre o Divina Glow
 
