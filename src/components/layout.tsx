@@ -38,7 +38,7 @@ export function Layout() {
       "/financeiro": "Financeiro",
       "/configuracoes": "Configurações"
     }
-    return titles[pathname] || "Divina Glow"
+    return titles[pathname] || "Cantinho das Unhas"
   }
 
   const getCurrentTab = (pathname: string) => {
@@ -49,7 +49,7 @@ export function Layout() {
   return (
     <div className="min-h-screen bg-background">
       {/* Drag Window Region - Barra de título do Electron */}
-      <DragWindowRegion title="Divina Glow" />
+      <DragWindowRegion title="Cantinho das Unhas" />
       
       {/* Mobile overlay */}
       {sidebarOpen && isMobile && (

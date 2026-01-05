@@ -8,7 +8,7 @@ export default function BaseLayout({
 }) {
   return (
     <>
-      <DragWindowRegion title="Divina Glow" />
+      <DragWindowRegion title="Cantinho das Unhas" />
       <main className="h-screen p-2 pb-20">{children}</main>
     </>
   );

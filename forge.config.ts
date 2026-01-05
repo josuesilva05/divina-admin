@@ -18,7 +18,7 @@ const config: ForgeConfig = {
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({
-      setupExe: "divina-glow-setup.exe",
+      setupExe: "cantinho-das-unhas-setup.exe",
       noMsi: true,
     }),
     new MakerZIP({}, ["darwin"]),

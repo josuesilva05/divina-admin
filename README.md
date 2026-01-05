@@ -1,12 +1,12 @@
-# Divina Glow
+# Cantinho das Unhas
 
-Sistema de gestão completo desenvolvido com Electron. Tudo que você precisa para gerenciar sua clínica ou salão de beleza.
+Sistema de gestão completo desenvolvido com Electron. Tudo que você precisa para gerenciar seu salão de manicure e pedicure.
 
 ![Demo GIF](https://github.com/josuesilva05/divina-admin/blob/main/images/foto.png)
 
-## Sobre o Divina Glow
+## Sobre o Cantinho das Unhas
 
-Divina Glow é um sistema de gestão moderno e elegante, desenvolvido especificamente para clínicas de estética e salões de beleza. Com uma interface intuitiva e recursos completos para gerenciamento de clientes, agendamentos, procedimentos e finanças.
+Cantinho das Unhas é um sistema de gestão moderno e elegante, desenvolvido especificamente para salões de manicure e pedicure. Com uma interface intuitiva e recursos completos para gerenciamento de clientes, agendamentos, serviços e finanças.
 
 ## Libs and tools
 

@@ -13,7 +13,8 @@ import {
   Settings, 
   Scissors,
   Package,
-  TrendingUp
+  TrendingUp,
+  BadgeDollarSign
 } from "lucide-react"
 
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -127,11 +128,11 @@ export function Sidebar({ className, activeTab, onTabChange, isCollapsed }: Side
                 "flex items-center justify-center rounded-lg bg-primary/10 p-2",
                 isCollapsed ? "w-10 h-10" : "w-8 h-8"
               )}>
-                <Scissors className="h-4 w-4 text-primary" />
+                <BadgeDollarSign className="h-4 w-4 text-primary" />
               </div>
               {!isCollapsed && (
                 <h2 className="ml-3 text-lg font-semibold tracking-tight text-foreground">
-                  Divina Glow
+                  Cantinho das Unhas
                 </h2>
               )}
             </div>
